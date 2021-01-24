@@ -6,16 +6,13 @@ services:
         build:
             context: ./demo
         ports:
-            - 8080:8080
+            - "9000:80"
     frontend:
         image: demo-ui
         container_name: demo-ui
         build:
             context: ./my-demo-ui
         ports:
-            - 80:80
+            - "4200:80"
         depends_on:
-            - backend
-    
-        
-        
+            - backend    
