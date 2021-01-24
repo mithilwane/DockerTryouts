@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+    backend:
+        image: demo
+        container_name: demo
+        build:
+            context: ./demo
+        ports:
+            - 8080:8080
+    frontend:
+        image: demo-ui
+        container_name: demo-ui
+        build:
+            context: ./my-demo-ui
+        ports:
+            - 80:80
+        depends_on:
+            - backend
+    
+        
+        
